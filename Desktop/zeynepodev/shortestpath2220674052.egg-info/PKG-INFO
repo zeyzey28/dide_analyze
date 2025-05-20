@@ -1,0 +1,76 @@
+Metadata-Version: 2.1
+Name: shortestpath2220674052
+Version: 0.1.1
+Summary: En kısa yolu bulan bir Python paketi
+Home-page: https://github.com/zeyzey28/shortestpath
+Author: Zeynep Oğulcan
+Author-email: zeynepogulcan@hacettepe.edu.tr
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+
+# ShortestPath Paketi
+
+Bu paket, graf yapılarında en kısa yolu bulmak için Dijkstra algoritması kullanır.
+
+## Özellikler
+
+- En kısa yolu bulma (Dijkstra algoritması kullanarak)
+- Grafları kenarlardan oluşturma
+- Node'lar arasındaki en kısa yolu ve toplam mesafeyi hesaplama
+
+## Kurulum
+
+Paketi pip kullanarak kurabilirsiniz:
+
+```bash
+pip install shortestpath00000000
+```
+
+## Kullanım Örnekleri
+
+```python
+from shortestpath import create_graph_from_edges, get_shortest_path
+
+# Kenarlardan bir graf oluşturalım
+edges = [
+    ('A', 'B', 5),  # A'dan B'ye mesafe 5
+    ('A', 'C', 3),  # A'dan C'ye mesafe 3
+    ('B', 'C', 1),  # B'den C'ye mesafe 1
+    ('C', 'D', 2)   # C'den D'ye mesafe 2
+]
+
+graph = create_graph_from_edges(edges)
+
+# A'dan D'ye en kısa yolu bulalım
+path, distance = get_shortest_path(graph, 'A', 'D')
+
+print(f"En kısa yol: {path}")  # ['A', 'C', 'D']
+print(f"Toplam mesafe: {distance}")  # 5
+```
+
+## Detaylı Dokümantasyon
+
+Detaylı dokümantasyon için [Sphinx Dokümantasyonu](https://github.com/yourusername/shortestpath/docs/build/html/index.html) sayfasını ziyaret edebilirsiniz.
+
+## Geliştirme
+
+### Gereksinimler
+
+Geliştirme için aşağıdaki paketleri kurmanız gerekir:
+
+```bash
+pip install -r requirements.txt
+```
+
+### Testleri Çalıştırma
+
+```bash
+pytest
+```
+
+## Lisans
+
+Bu proje MIT lisansı altında lisanslanmıştır. Daha fazla bilgi için [LICENSE](LICENSE) dosyasını inceleyebilirsiniz. 
